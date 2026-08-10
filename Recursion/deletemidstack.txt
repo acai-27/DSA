@@ -1,0 +1,21 @@
+class Solution {
+    public void deleteMid(Stack<Integer> s) {
+      int len=s.size();
+      int stopidx = len%2==0 ? len/2 : (len+1)/2;
+      deleteMidk(s,stopidx);
+
+    }
+    
+    void deleteMidk(Stack<Integer> s,int k){
+        if(s.size()==k){
+            s.pop();
+            return;
+        }
+        int val=s.pop();
+        deleteMidk(s,k);
+        s.push(val);
+    }
+    // When a variable keeps changing but you need the original value → Pass it into a helper
+    //When you need temporary storage from the same stack → Let recursion create a mini-stack
+ 
+}
