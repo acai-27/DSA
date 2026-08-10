@@ -1,0 +1,38 @@
+// class Solution {
+//     public int myAtoi(String s) {
+//         int m = 1;
+//         int digit = 0;
+//         int n = s.length();
+//         int i = 0;
+//         while (i < n) {
+//             char ch = s.charAt(i);
+
+//             if (ch == ' ') {
+//                 i++;
+//             } else if (ch == '-') {
+//                 m = -1;
+//                 i++;
+//                 break; // <-- minimal fix
+//             } else if (ch == '+') {
+//                 m = 1;
+//                 i++;
+//                 break; // <-- minimal fix
+//             } else
+//                 break;
+//         }
+//         while (i < n) {
+//             char ch = s.charAt(i);
+//             if (ch < '0' || ch > '9')
+//                 break;
+//             int d = ch - '0';
+//             if (digit > Integer.MAX_VALUE / 10 ||
+//                     (digit == Integer.MAX_VALUE / 10 && d > Integer.MAX_VALUE % 10)) {
+//                 return (m == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+//             }
+//             digit = digit * 10 + d;
+//             i++;
+
+//         }
+//         return digit * m;
+//     }
+// }
