@@ -12,3 +12,5 @@ class Solution {
         return count(idx+1,0,n)+count(idx+1,1,n);
     }
 }
+/// if one has only one branch we need to return only one when condition is true
+// normal both branches shld get discovered otherwise 
