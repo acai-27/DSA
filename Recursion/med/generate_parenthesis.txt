@@ -1,0 +1,21 @@
+class Solution {
+    public ArrayList<String> generateParentheses(int n) {
+        ArrayList<String> res=new ArrayList<String>();
+        generate(res,0,0,n, "");
+        return res;
+    }
+    
+    void generate(ArrayList<String> res, int open,int closed, int n,String s){
+        if(s.length()==n){
+            res.add(s);
+            return;
+        }
+        if(open<n/2){
+            generate(res,open+1,closed,n,s+"(");
+        }
+        if(open >closed){
+            generate(res,open,closed+1,n,s+")");
+        }
+        
+    }
+}
